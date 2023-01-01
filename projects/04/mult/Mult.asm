@@ -10,3 +10,44 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+
+// R0とR1回足す
+// R2に値を入れる
+
+// num1: R0
+// num2: R1
+// result: R2
+// i: R3
+
+  // initialize result & i
+  @R2
+  M=0
+  @R3
+  M=1
+
+(LOOP)
+  // jump to end if i - num2 > 0
+  @R3
+  D=M // +i
+  @R1
+  D=D-M // -num2
+  @END
+  D;JGT
+
+  // add num1 to result
+  @R0 // load num1
+  D=M
+  @R2 // load result
+  M=M+D
+
+  // increment i
+  @R3
+  M=M+1
+
+  // jump back to loop top
+  @LOOP
+  0;JMP
+
+(END)
+  @END
+  0;JMP
