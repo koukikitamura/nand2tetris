@@ -1,2 +1,3 @@
 projects/**/*.out
 tools/bin/*.dat
+projects/**/node_modules
