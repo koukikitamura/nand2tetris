@@ -96,17 +96,17 @@ describe("Parser Class", () => {
     });
   });
 
-  describe("Parser#dist", () => {
-    test("should return dist part", async () => {
+  describe("Parser#dest", () => {
+    test("should return dest part", async () => {
       const stream = Readable.from(["M=D+1\n", "MD=D+1\n", "D;JGT\n"]);
 
       const parser = await Parser.build(stream);
       await parser.advance();
-      expect(parser.dist()).toEqual("M"); // @M=D+1
+      expect(parser.dest()).toEqual("M"); // @M=D+1
       await parser.advance();
-      expect(parser.dist()).toEqual("MD"); // @MD=D+1
+      expect(parser.dest()).toEqual("MD"); // @MD=D+1
       await parser.advance();
-      expect(parser.dist()).toEqual(""); // D;JGT
+      expect(parser.dest()).toEqual(""); // D;JGT
     });
 
     test("should throw error when command is not C command", async () => {
@@ -114,7 +114,7 @@ describe("Parser Class", () => {
       const parser = await Parser.build(stream);
       await parser.advance();
       expect(() => {
-        parser.dist();
+        parser.dest();
       }).toThrow(Error);
     });
   });

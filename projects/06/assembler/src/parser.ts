@@ -49,9 +49,9 @@ export class Parser {
     throw new Error("symbol function is called only by A_COMMAND or L_COMMAND");
   }
 
-  dist(): string {
+  dest(): string {
     if (this.commandType() !== CommandType.C_COMMAND) {
-      throw new Error("dist function is called only by C_COMMAND");
+      throw new Error("dest function is called only by C_COMMAND");
     }
 
     const equalIndex = this.command.indexOf("=");
@@ -63,7 +63,7 @@ export class Parser {
 
   comp(): string {
     if (this.commandType() !== CommandType.C_COMMAND) {
-      throw new Error("dist function is called only by C_COMMAND");
+      throw new Error("comp function is called only by C_COMMAND");
     }
 
     const equalIndex = this.command.indexOf("=");
@@ -82,7 +82,7 @@ export class Parser {
 
   jump(): string {
     if (this.commandType() !== CommandType.C_COMMAND) {
-      throw new Error("dist function is called only by C_COMMAND");
+      throw new Error("jump function is called only by C_COMMAND");
     }
 
     const colonIndex = this.command.indexOf(";");
