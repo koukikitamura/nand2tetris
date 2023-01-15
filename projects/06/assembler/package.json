@@ -5,11 +5,16 @@
   "private": true,
   "scripts": {
     "test": "yarn jest",
-    "build": "ts-node ./src/assembla-no-symbol.ts",
-    "build:addL": "yarn build ./../add/Add.asm",
-    "build:maxL": "yarn build ./../max/MaxL.asm",
-    "build:pongL": "yarn build ./../pong/PongL.asm",
-    "build:rectL": "yarn build ./../rect/RectL.asm"
+    "build": "ts-node ./src/assembla.ts",
+    "buildL": "ts-node ./src/assembla-no-symbol.ts",
+    "build:add": "yarn build ./../add/Add.asm",
+    "build:addL": "yarn buildL ./../add/Add.asm",
+    "build:max": "yarn build ./../max/Max.asm",
+    "build:maxL": "yarn buildL ./../max/MaxL.asm",
+    "build:pong": "yarn build ./../pong/Pong.asm",
+    "build:pongL": "yarn buildL ./../pong/PongL.asm",
+    "build:rect": "yarn build ./../rect/Rect.asm",
+    "build:rectL": "yarn buildL ./../rect/RectL.asm"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
